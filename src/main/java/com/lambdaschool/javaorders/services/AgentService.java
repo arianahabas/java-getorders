@@ -8,5 +8,6 @@ public interface AgentService {
 
   Agent save(Agent agent);
 
+  Agent findAgentById(long id);
 
 }
