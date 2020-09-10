@@ -11,11 +11,12 @@ import com.lambdaschool.javaorders.repositories.OrdersRepository;
 import com.lambdaschool.javaorders.repositories.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 
 @Transactional
-//@Component ///comment this out to use data.sql
+@Component ///comment this out to use data.sql ++ change data.sql from always to never
 public class SeedData implements CommandLineRunner {
   /**
    * Connects the customer table to this SeedData method
