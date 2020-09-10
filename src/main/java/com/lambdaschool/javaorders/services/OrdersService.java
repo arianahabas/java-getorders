@@ -5,4 +5,6 @@ import org.aspectj.weaver.ast.Or;
 
 public interface OrdersService {
   Order save (Order order);
+
+  Order findByOrderId(long id);
 }

@@ -1,6 +1,7 @@
 package com.lambdaschool.javaorders.services;
 
 import com.lambdaschool.javaorders.models.Customer;
+import com.lambdaschool.javaorders.views.OrderCounts;
 
 import java.util.List;
 
@@ -14,4 +15,6 @@ public interface CustomerService {
   Customer findCustomerById(long id);
 
   List<Customer> findByCustomerName(String subname);
+
+  List<OrderCounts> countOrdersByCustomer();
 }

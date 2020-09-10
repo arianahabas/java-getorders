@@ -2,6 +2,7 @@ package com.lambdaschool.javaorders.controllers;
 
 import com.lambdaschool.javaorders.models.Customer;
 import com.lambdaschool.javaorders.services.CustomerService;
+import com.lambdaschool.javaorders.views.OrderCounts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,4 +42,10 @@ public class CustomerController {
     return new ResponseEntity<>(rtnList, HttpStatus.OK);
   }
 
+  //http://localhost:2019/customers/orders/count -> Using a custom query, return a list of all customers with the number of orders they have placed.
+  @GetMapping(value = "/orders/count", produces = "application/json")
+  public ResponseEntity<?> getOrderCounts(){
+    List<OrderCounts> rtnList = customerService.countOrdersByCustomer();
+    return new ResponseEntity<>(rtnList, HttpStatus.OK);
+  }
 }
